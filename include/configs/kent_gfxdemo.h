@@ -1,9 +1,11 @@
 /* SPDX-License-Identifier: GPL-2.0+ */
 /*
- * Configuration file for the SAMA5D27 SOM1 EK Board.
+ * Configuration file for the Kent Scientific KSC2024 Graphics Demo board.
  *
  * Copyright (C) 2017 Microchip Corporation
- *		      Wenyou Yang <wenyou.yang@microchip.com>
+ *                    Wenyou Yang <wenyou.yang@microchip.com>
+ *  Copyright (C) 2023 Innovative Electronics, LLC
+ *                     Sam Birch <sbirch@innovative-electronics.com>
  */
 
 #ifndef __CONFIG_H

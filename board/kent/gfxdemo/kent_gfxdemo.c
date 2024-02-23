@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
  * Copyright (C) 2017 Microchip Corporation
- *		      Wenyou.Yang <wenyou.yang@microchip.com>
+ *                    Wenyou.Yang <wenyou.yang@microchip.com>
+ * Copyright (C) 2023 Innovative Electronics, LLC
+ *                    Sam Birch <sbirch@innovative-electronics.com>
  */
 
 #include <common.h>
@@ -18,23 +20,14 @@
 #include <asm/arch/gpio.h>
 #include <asm/arch/sama5d2.h>
 
-extern void at91_pda_detect(void);
-
 DECLARE_GLOBAL_DATA_PTR;
 
 static void rgb_leds_init(void)
 {
-	atmel_pio4_set_pio_output(AT91_PIO_PORTA, 10, 0);	/* LED RED */
-	atmel_pio4_set_pio_output(AT91_PIO_PORTB, 1, 0);	/* LED GREEN */
-	atmel_pio4_set_pio_output(AT91_PIO_PORTA, 31, 1);	/* LED BLUE */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTB, 10, 0);	/* LED RED */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTB,  8, 0);	/* LED GREEN */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTA,  6, 1);	/* LED BLUE */
 }
-
-#ifdef CONFIG_CMD_USB
-static void board_usb_hw_init(void)
-{
-	atmel_pio4_set_pio_output(AT91_PIO_PORTA, 27, 1);
-}
-#endif
 
 #ifdef CONFIG_BOARD_LATE_INIT
 int board_late_init(void)
@@ -42,7 +35,6 @@ int board_late_init(void)
 #ifdef CONFIG_VIDEO
 	at91_video_show_board_info();
 #endif
-	at91_pda_detect();
 	return 0;
 }
 #endif
@@ -75,10 +67,6 @@ int board_init(void)
 	gd->bd->bi_boot_params = gd->bd->bi_dram[0].start + 0x100;
 
 	rgb_leds_init();
-
-#ifdef CONFIG_CMD_USB
-	board_usb_hw_init();
-#endif
 
 	return 0;
 }
