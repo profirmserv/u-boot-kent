@@ -24,9 +24,9 @@ DECLARE_GLOBAL_DATA_PTR;
 
 static void rgb_leds_init(void)
 {
-	atmel_pio4_set_pio_output(AT91_PIO_PORTB, 10, 0);	/* LED RED */
-	atmel_pio4_set_pio_output(AT91_PIO_PORTB,  8, 0);	/* LED GREEN */
-	atmel_pio4_set_pio_output(AT91_PIO_PORTA,  6, 1);	/* LED BLUE */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTB, 10, 0); /* LED RED */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTB,  8, 0); /* LED GREEN */
+	atmel_pio4_set_pio_output(AT91_PIO_PORTA,  6, 1); /* LED BLUE */
 }
 
 #ifdef CONFIG_BOARD_LATE_INIT
@@ -42,8 +42,8 @@ int board_late_init(void)
 #ifdef CONFIG_DEBUG_UART_BOARD_INIT
 static void board_uart1_hw_init(void)
 {
-	atmel_pio4_set_a_periph(AT91_PIO_PORTD, 2, ATMEL_PIO_PUEN_MASK);	/* URXD1 */
-	atmel_pio4_set_a_periph(AT91_PIO_PORTD, 3, 0);	/* UTXD1 */
+	atmel_pio4_set_a_periph(AT91_PIO_PORTD, 2, ATMEL_PIO_PUEN_MASK); /* URXD1 */
+	atmel_pio4_set_a_periph(AT91_PIO_PORTD, 3, 0);                   /* UTXD1 */
 
 	at91_periph_clk_enable(ATMEL_ID_UART1);
 }
@@ -99,35 +99,35 @@ static void ddrc_conf(struct atmel_mpddrc_config *ddrc)
 	ddrc->md = (ATMEL_MPDDRC_MD_DBW_16_BITS | ATMEL_MPDDRC_MD_DDR2_SDRAM);
 
 	ddrc->cr = (ATMEL_MPDDRC_CR_NC_COL_10 |
-		    ATMEL_MPDDRC_CR_NR_ROW_13 |
-		    ATMEL_MPDDRC_CR_CAS_DDR_CAS3 |
-		    ATMEL_MPDDRC_CR_DIC_DS |
-		    ATMEL_MPDDRC_CR_ZQ_LONG |
-		    ATMEL_MPDDRC_CR_NB_8BANKS |
-		    ATMEL_MPDDRC_CR_DECOD_INTERLEAVED |
-		    ATMEL_MPDDRC_CR_UNAL_SUPPORTED);
+	            ATMEL_MPDDRC_CR_NR_ROW_13 |
+	            ATMEL_MPDDRC_CR_CAS_DDR_CAS3 |
+	            ATMEL_MPDDRC_CR_DIC_DS |
+	            ATMEL_MPDDRC_CR_ZQ_LONG |
+	            ATMEL_MPDDRC_CR_NB_8BANKS |
+	            ATMEL_MPDDRC_CR_DECOD_INTERLEAVED |
+	            ATMEL_MPDDRC_CR_UNAL_SUPPORTED);
 
 	ddrc->rtr = 0x511;
 
 	ddrc->tpr0 = ((7 << ATMEL_MPDDRC_TPR0_TRAS_OFFSET) |
-		      (3 << ATMEL_MPDDRC_TPR0_TRCD_OFFSET) |
-		      (3 << ATMEL_MPDDRC_TPR0_TWR_OFFSET) |
-		      (9 << ATMEL_MPDDRC_TPR0_TRC_OFFSET) |
-		      (3 << ATMEL_MPDDRC_TPR0_TRP_OFFSET) |
-		      (4 << ATMEL_MPDDRC_TPR0_TRRD_OFFSET) |
-		      (4 << ATMEL_MPDDRC_TPR0_TWTR_OFFSET) |
-		      (2 << ATMEL_MPDDRC_TPR0_TMRD_OFFSET));
+	              (3 << ATMEL_MPDDRC_TPR0_TRCD_OFFSET) |
+	              (3 << ATMEL_MPDDRC_TPR0_TWR_OFFSET) |
+	              (9 << ATMEL_MPDDRC_TPR0_TRC_OFFSET) |
+	              (3 << ATMEL_MPDDRC_TPR0_TRP_OFFSET) |
+	              (4 << ATMEL_MPDDRC_TPR0_TRRD_OFFSET) |
+	              (4 << ATMEL_MPDDRC_TPR0_TWTR_OFFSET) |
+	              (2 << ATMEL_MPDDRC_TPR0_TMRD_OFFSET));
 
 	ddrc->tpr1 = ((22 << ATMEL_MPDDRC_TPR1_TRFC_OFFSET) |
-		      (23 << ATMEL_MPDDRC_TPR1_TXSNR_OFFSET) |
-		      (200 << ATMEL_MPDDRC_TPR1_TXSRD_OFFSET) |
-		      (3 << ATMEL_MPDDRC_TPR1_TXP_OFFSET));
+	              (23 << ATMEL_MPDDRC_TPR1_TXSNR_OFFSET) |
+	              (200 << ATMEL_MPDDRC_TPR1_TXSRD_OFFSET) |
+	              (3 << ATMEL_MPDDRC_TPR1_TXP_OFFSET));
 
 	ddrc->tpr2 = ((2 << ATMEL_MPDDRC_TPR2_TXARD_OFFSET) |
-		      (8 << ATMEL_MPDDRC_TPR2_TXARDS_OFFSET) |
-		      (4 << ATMEL_MPDDRC_TPR2_TRPA_OFFSET) |
-		      (4 << ATMEL_MPDDRC_TPR2_TRTP_OFFSET) |
-		      (8 << ATMEL_MPDDRC_TPR2_TFAW_OFFSET));
+	              (8 << ATMEL_MPDDRC_TPR2_TXARDS_OFFSET) |
+	              (4 << ATMEL_MPDDRC_TPR2_TRPA_OFFSET) |
+	              (4 << ATMEL_MPDDRC_TPR2_TRTP_OFFSET) |
+	              (8 << ATMEL_MPDDRC_TPR2_TFAW_OFFSET));
 }
 
 void mem_init(void)

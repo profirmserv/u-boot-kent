@@ -14,9 +14,9 @@
 #include "at91-sama5_common.h"
 
 #undef CFG_SYS_AT91_MAIN_CLOCK
-#define CFG_SYS_AT91_MAIN_CLOCK      24000000 /* from 24 MHz crystal */
+#define CFG_SYS_AT91_MAIN_CLOCK 24000000 /* from 24 MHz crystal */
 
-#define CFG_SYS_PL310_BASE		0xa00000
+#define CFG_SYS_PL310_BASE      0xa00000
 /* SPL */
 
 #endif
