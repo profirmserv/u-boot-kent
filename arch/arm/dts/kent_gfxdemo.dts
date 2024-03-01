@@ -1,10 +1,11 @@
+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 /*
  * kent_gfxdemo.dts - Device Tree file for Kent Scientific KSC2024 Graphics Demo
  *
  *  Copyright (C) 2017 Microchip Corporation
  *                     Wenyou Yang <wenyou.yang@microchip.com>
- *  Copyright (C) 2023 Innovative Electronics, LLC
- *                     Sam Birch <sbirch@innovative-electronics.com>
+ *  Copyright (C) 2023 Kent Scientific Corporation
+ *                     Sam Birch <sam@profirmserv.com>
  *
  * This file is dual-licensed: you can use it either under the terms
  * of the GPL or the X11 license, at your option. Note that this dual
