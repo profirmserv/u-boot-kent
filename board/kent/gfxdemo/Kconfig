@@ -1,0 +1,15 @@
+if TARGET_KENT_GFXDEMO
+
+config SYS_BOARD
+	default "gfxdemo"
+
+config SYS_VENDOR
+	default "kent"
+
+config SYS_SOC
+	default "at91"
+
+config SYS_CONFIG_NAME
+	default "kent_gfxdemo"
+
+endif

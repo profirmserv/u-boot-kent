@@ -205,6 +205,15 @@ config TARGET_SAMA5D27_SOM1_EK
 	  processor-based SAMA5D2 MPU with up to 1 Gbit DDR2-SDRAM
 	  in a single package.
 
+config TARGET_KENT_GFXDEMO
+	bool "Kent Scientific KSC2024 Graphics Demo"
+	select SAMA5D2
+	select BOARD_EARLY_INIT_F
+	select BOARD_LATE_INIT
+	select CPU_V7A
+	select SUPPORT_SPL
+	select ATMEL_SFR
+
 config TARGET_SAMA5D27_WLSOM1_EK
 	bool "SAMA5D27 WLSOM1 EK board"
 	select SAMA5D2
@@ -385,6 +394,7 @@ source "board/calao/usb_a9263/Kconfig"
 source "board/egnite/ethernut5/Kconfig"
 source "board/esd/meesc/Kconfig"
 source "board/gardena/smart-gateway-at91sam/Kconfig"
+source "board/kent/gfxdemo/Kconfig"
 source "board/l+g/vinco/Kconfig"
 source "board/ronetix/pm9261/Kconfig"
 source "board/ronetix/pm9263/Kconfig"

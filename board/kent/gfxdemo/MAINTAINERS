@@ -1,0 +1,6 @@
+KENT GFXDEMO BOARD
+M:	Sam Birch <sam@profirmserv.com>
+S:	Maintained
+F:	board/kent/gfxdemo/
+F:	include/configs/kent_gfxdemo.h
+F:	configs/kent_gfxdemo_defconfig
